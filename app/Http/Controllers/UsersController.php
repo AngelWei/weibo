@@ -19,9 +19,9 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
-    	this->validate($request, [
+    	$this->validate($request, [
     		'name' => 'required|max:50',
-    		'email' => 'reuqired|email|unique:users|max:255',
+    		'email' => 'required|email|unique:users|max:255',
     		'passwrod' => 'required|confirmed|min:6'
     	]);
     	return;
